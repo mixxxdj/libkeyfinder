@@ -17,10 +17,16 @@ jobs:
     - name: build
       run: |
         mkdir build
-        cmake -S . -B build
-        cmake --build build
+        mkdir ~/libKeyFinder
+        cmake -DCMAKE_INSTALL_PREFIX=~/libKeyFinder -S . -B build
+        cmake --build build --target install
     - name: run tests
       run: build/tests/test
+    - name: upload build artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Ubuntu build
+        path: ~/libKeyFinder
   macOS:
     runs-on: macOS-latest
     steps:
@@ -32,7 +38,13 @@ jobs:
     - name: build
       run: |
         mkdir build
-        cmake -S . -B build
-        cmake --build build
+        mkdir ~/libKeyFinder
+        cmake -DCMAKE_INSTALL_PREFIX=~/libKeyFinder -S . -B build
+        cmake --build build --target install
     - name: run tests
       run: build/tests/test
+    - name: upload build artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: macOS build
+        path: ~/libKeyFinder
