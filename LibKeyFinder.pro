@@ -27,7 +27,7 @@ CONFIG -= qt
 TARGET = keyfinder
 TEMPLATE = lib
 
-VERSION = 2.2.2
+VERSION = 2.2.3
 
 CONFIG += c++11
 QMAKE_CXXFLAGS += -std=c++11

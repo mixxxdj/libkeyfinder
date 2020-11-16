@@ -69,7 +69,7 @@ install(FILES
   binode.h
   DESTINATION include/keyfinder)
 
-set(LIBKEYFINDER_VERSION 2.2.2)
+set(LIBKEYFINDER_VERSION 2.2.3)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/libKeyFinder.pc.cmake
   ${CMAKE_CURRENT_BINARY_DIR}/libKeyFinder.pc @ONLY)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libKeyFinder.pc DESTINATION lib/pkgconfig)
