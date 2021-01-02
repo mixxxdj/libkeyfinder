@@ -3,45 +3,30 @@ project(libkeyfinder)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+option(BUILD_STATIC_LIBS "Build library statically" OFF)
 if(BUILD_STATIC_LIBS)
-  message(STATUS "Building libKeyFinder as a static library")
-  add_library(keyfinder STATIC
-    src/audiodata.cpp
-    src/chromagram.cpp
-    src/chromatransform.cpp
-    src/chromatransformfactory.cpp
-    src/fftadapter.cpp
-    src/keyclassifier.cpp
-    src/keyfinder.cpp
-    src/lowpassfilter.cpp
-    src/lowpassfilterfactory.cpp
-    src/spectrumanalyser.cpp
-    src/temporalwindowfactory.cpp
-    src/toneprofiles.cpp
-    src/windowfunctions.cpp
-    src/workspace.cpp
-    src/constants.cpp
-  )
+  set(LIBMODE "STATIC")
 else()
-  message(STATUS "Building libKeyFinder as a dynamic library")
-  add_library(keyfinder SHARED
-    src/audiodata.cpp
-    src/chromagram.cpp
-    src/chromatransform.cpp
-    src/chromatransformfactory.cpp
-    src/fftadapter.cpp
-    src/keyclassifier.cpp
-    src/keyfinder.cpp
-    src/lowpassfilter.cpp
-    src/lowpassfilterfactory.cpp
-    src/spectrumanalyser.cpp
-    src/temporalwindowfactory.cpp
-    src/toneprofiles.cpp
-    src/windowfunctions.cpp
-    src/workspace.cpp
-    src/constants.cpp
-  )
+  set(LIBMODE "SHARED")
 endif()
+
+add_library(keyfinder "${LIBMODE}"
+  src/audiodata.cpp
+  src/chromagram.cpp
+  src/chromatransform.cpp
+  src/chromatransformfactory.cpp
+  src/fftadapter.cpp
+  src/keyclassifier.cpp
+  src/keyfinder.cpp
+  src/lowpassfilter.cpp
+  src/lowpassfilterfactory.cpp
+  src/spectrumanalyser.cpp
+  src/temporalwindowfactory.cpp
+  src/toneprofiles.cpp
+  src/windowfunctions.cpp
+  src/workspace.cpp
+  src/constants.cpp
+)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 find_package(FFTW REQUIRED)
