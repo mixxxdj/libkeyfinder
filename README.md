@@ -1,6 +1,6 @@
 # `libKeyFinder`
 
-`libKeyFinder` is a small C++11 library for estimating the musical key of digital audio. It is published under the GNU General Public License version 3 or later.
+`libKeyFinder` is a small C++11 library for estimating the musical key of digital audio. It is published under the [GNU General Public License version 3 or later](LICENSE).
 
 It was written by [Ibrahim Shaath](http://ibrahimshaath.co.uk/keyfinder/) who wrote it in 2011 as part of a master's thesis in computer science. A [GUI application](https://github.com/ibsh/is_KeyFinder) to use it is available for [macOS](http://www.ibrahimshaath.co.uk/keyfinder/bins/KeyFinder-OSX-2-4.zip) and [Windows](http://www.ibrahimshaath.co.uk/keyfinder/bins/KeyFinder-WIN-1-25.zip), however that is no longer maintained and does not build on contemporary Linux distributions.
 
@@ -60,7 +60,7 @@ while (someType yourPacket = newAudioPacket()) {
 }
 
 // if you only want a single key estimate, or to squeeze
-// every last bit of audio from the working buffer after 
+// every last bit of audio from the working buffer after
 // progressive estimates...
 k.finalChromagram(w);
 
@@ -76,17 +76,19 @@ First, you will need to install `libKeyFinder`'s dependencies:
 
 * [FFTW version 3](http://www.fftw.org/download.html)
 
-  OSX and homebrew: `$ brew install fftw`
+  Fedora: `$ sudo dnf install fftw-devel`
+  Debian & Ubuntu: `$ sudo apt install libfftw3-dev`
+  macOS and homebrew: `$ brew install fftw`
 
 Once dependencies are installed, build `libKeyFinder`:
 
 ```sh
-$ mkdir build
 $ cmake -DCMAKE_INSTALL_PREFIX /where/you/want/to/install/to -S . -B build
-$ cmake --build build --target install --parallel number-of-cpu-cores
+$ cmake --build build --parallel number-of-cpu-cores
+$ cmake --install build
 ```
 
-If you want to build libKeyFinder statically, add `-DBUILD_STATIC_LIBS` to the first call to `cmake` above.
+If you want to build libKeyFinder statically, add `-DBUILD_STATIC_LIBS=ON` to the first call to `cmake` above.
 
 ## Testing
 
@@ -103,5 +105,5 @@ If all goes well, you should see something like this:
 All tests passed (1705510 assertions in 65 test cases)
 ```
 
-Note that there is a known intermittent failure in the `FftAdapterTest/ForwardAndBackward` test. Try running the tests a handful of times to determine whether you are hitting the intermittent or have introduced a new bug.
+Note that there is a known intermittent failure in the `FftAdapterTest/ForwardAndBackward` test. Try running the tests a handful of times to determine whether you are hitting the intermittent failure or have introduced a new bug.
 
