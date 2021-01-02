@@ -72,13 +72,11 @@ doSomethingWithFinalKeyEstimate(r.globalKeyEstimate);
 
 ## Installation
 
-First, you will need to install `libKeyFinder`'s dependencies:
+First, you will need to install [FFTW3](http://www.fftw.org/download.html):
 
-* [FFTW version 3](http://www.fftw.org/download.html)
-
-  Fedora: `$ sudo dnf install fftw-devel`
-  Debian & Ubuntu: `$ sudo apt install libfftw3-dev`
-  macOS and homebrew: `$ brew install fftw`
+* Fedora: `$ sudo dnf install fftw-devel`
+* Debian & Ubuntu: `$ sudo apt install libfftw3-dev`
+* macOS and homebrew: `$ brew install fftw`
 
 Once dependencies are installed, build `libKeyFinder`:
 
