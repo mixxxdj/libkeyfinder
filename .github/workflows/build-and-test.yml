@@ -1,50 +1,43 @@
-name: libKeyFinder
+name: build
 
 on:
   push:
   pull_request:
 
 jobs:
-  Ubuntu:
-    runs-on: ubuntu-20.04
+  build:
+    strategy:
+      matrix:
+        include:
+          - name: Ubuntu 20.04
+            os: ubuntu-20.04
+            install_dir: ~/libKeyFinder
+          - name: macOS 10.15
+            os: macos-10.15
+            install_dir: ~/libKeyFinder
+
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
     steps:
     - name: Check out Git repository
       uses: actions/checkout@v2
-    - name: Install build dependencies
+    - name: "[Ubuntu] Install FFTW"
+      if: startsWith(matrix.os, 'ubuntu')
       run: |
         sudo apt-get update
-        sudo apt-get install -y --no-install-recommends cmake fftw3-dev
+        sudo apt-get install -y --no-install-recommends fftw3-dev
+    - name: "[macOS] Install FFTW"
+      if: startsWith(matrix.os, 'macos')
+      run: brew install fftw
     - name: build
       run: |
-        mkdir build
-        mkdir ~/libKeyFinder
-        cmake -DCMAKE_INSTALL_PREFIX=~/libKeyFinder -S . -B build
-        cmake --build build --target install
+        cmake -DCMAKE_INSTALL_PREFIX=${{ matrix.install_dir }} -S . -B build
+        cmake --build build --parallel 2
+        cmake --install build
     - name: run tests
       run: build/tests/test
     - name: upload build artifact
       uses: actions/upload-artifact@v2
       with:
-        name: Ubuntu build
-        path: ~/libKeyFinder
-  macOS:
-    runs-on: macOS-latest
-    steps:
-    - name: Check out Git repository
-      uses: actions/checkout@v2
-    - name: Install build dependencies
-      run: |
-        brew install fftw
-    - name: build
-      run: |
-        mkdir build
-        mkdir ~/libKeyFinder
-        cmake -DCMAKE_INSTALL_PREFIX=~/libKeyFinder -S . -B build
-        cmake --build build --target install
-    - name: run tests
-      run: build/tests/test
-    - name: upload build artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: macOS build
-        path: ~/libKeyFinder
+        name: ${{ matrix.name }} libKeyFinder build
+        path: ${{ matrix.install_dir }}
