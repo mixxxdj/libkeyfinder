@@ -18,4 +18,5 @@ add_executable(test
     toneprofilestest.cpp
     windowfunctiontest.cpp
     workspacetest.cpp)
+target_include_directories(test PRIVATE ../src)
 target_link_libraries(test keyfinder)

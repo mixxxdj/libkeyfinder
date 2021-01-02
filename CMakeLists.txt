@@ -6,40 +6,40 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 if(BUILD_STATIC_LIBS)
   message(STATUS "Building libKeyFinder as a static library")
   add_library(keyfinder STATIC
-    audiodata.cpp
-    chromagram.cpp
-    chromatransform.cpp
-    chromatransformfactory.cpp
-    fftadapter.cpp
-    keyclassifier.cpp
-    keyfinder.cpp
-    lowpassfilter.cpp
-    lowpassfilterfactory.cpp
-    spectrumanalyser.cpp
-    temporalwindowfactory.cpp
-    toneprofiles.cpp
-    windowfunctions.cpp
-    workspace.cpp
-    constants.cpp
+    src/audiodata.cpp
+    src/chromagram.cpp
+    src/chromatransform.cpp
+    src/chromatransformfactory.cpp
+    src/fftadapter.cpp
+    src/keyclassifier.cpp
+    src/keyfinder.cpp
+    src/lowpassfilter.cpp
+    src/lowpassfilterfactory.cpp
+    src/spectrumanalyser.cpp
+    src/temporalwindowfactory.cpp
+    src/toneprofiles.cpp
+    src/windowfunctions.cpp
+    src/workspace.cpp
+    src/constants.cpp
   )
 else()
   message(STATUS "Building libKeyFinder as a dynamic library")
   add_library(keyfinder SHARED
-    audiodata.cpp
-    chromagram.cpp
-    chromatransform.cpp
-    chromatransformfactory.cpp
-    fftadapter.cpp
-    keyclassifier.cpp
-    keyfinder.cpp
-    lowpassfilter.cpp
-    lowpassfilterfactory.cpp
-    spectrumanalyser.cpp
-    temporalwindowfactory.cpp
-    toneprofiles.cpp
-    windowfunctions.cpp
-    workspace.cpp
-    constants.cpp
+    src/audiodata.cpp
+    src/chromagram.cpp
+    src/chromatransform.cpp
+    src/chromatransformfactory.cpp
+    src/fftadapter.cpp
+    src/keyclassifier.cpp
+    src/keyfinder.cpp
+    src/lowpassfilter.cpp
+    src/lowpassfilterfactory.cpp
+    src/spectrumanalyser.cpp
+    src/temporalwindowfactory.cpp
+    src/toneprofiles.cpp
+    src/windowfunctions.cpp
+    src/workspace.cpp
+    src/constants.cpp
   )
 endif()
 
@@ -50,23 +50,23 @@ target_include_directories(keyfinder PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
 
 install(TARGETS keyfinder DESTINATION lib)
 install(FILES
-  audiodata.h
-  chromagram.h
-  chromatransform.h
-  chromatransformfactory.h
-  fftadapter.h
-  keyclassifier.h
-  keyfinder.h
-  lowpassfilter.h
-  lowpassfilterfactory.h
-  spectrumanalyser.h
-  temporalwindowfactory.h
-  toneprofiles.h
-  windowfunctions.h
-  workspace.h
-  constants.h
-  exception.h
-  binode.h
+  src/audiodata.h
+  src/chromagram.h
+  src/chromatransform.h
+  src/chromatransformfactory.h
+  src/fftadapter.h
+  src/keyclassifier.h
+  src/keyfinder.h
+  src/lowpassfilter.h
+  src/lowpassfilterfactory.h
+  src/spectrumanalyser.h
+  src/temporalwindowfactory.h
+  src/toneprofiles.h
+  src/windowfunctions.h
+  src/workspace.h
+  src/constants.h
+  src/exception.h
+  src/binode.h
   DESTINATION include/keyfinder)
 
 set(LIBKEYFINDER_VERSION 2.2.3)
