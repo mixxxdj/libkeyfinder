@@ -48,7 +48,8 @@ find_package(FFTW REQUIRED)
 target_link_libraries(keyfinder PUBLIC FFTW::FFTW)
 target_include_directories(keyfinder PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
 
-install(TARGETS keyfinder DESTINATION lib)
+include(GNUInstallDirs)
+install(TARGETS keyfinder DESTINATION "${CMAKE_INSTALL_LIBDIR}")
 install(FILES
   src/audiodata.h
   src/chromagram.h
@@ -67,11 +68,11 @@ install(FILES
   src/constants.h
   src/exception.h
   src/binode.h
-  DESTINATION include/keyfinder)
+  DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/keyfinder")
 
 set(LIBKEYFINDER_VERSION 2.2.3)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/libKeyFinder.pc.cmake
   ${CMAKE_CURRENT_BINARY_DIR}/libKeyFinder.pc @ONLY)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libKeyFinder.pc DESTINATION lib/pkgconfig)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libKeyFinder.pc DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
 
 add_subdirectory(tests)
