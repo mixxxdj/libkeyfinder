@@ -34,7 +34,12 @@ target_link_libraries(keyfinder PUBLIC FFTW3::fftw3)
 target_include_directories(keyfinder PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
 
 include(GNUInstallDirs)
-install(TARGETS keyfinder DESTINATION "${CMAKE_INSTALL_LIBDIR}")
+install(TARGETS keyfinder
+  ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+  LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+  RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
+)
+
 install(FILES
   src/audiodata.h
   src/chromagram.h
