@@ -29,8 +29,8 @@ add_library(keyfinder "${LIBMODE}"
 )
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-find_package(FFTW REQUIRED)
-target_link_libraries(keyfinder PUBLIC FFTW::FFTW)
+find_package(FFTW3 REQUIRED)
+target_link_libraries(keyfinder PUBLIC FFTW3::fftw3)
 target_include_directories(keyfinder PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
 
 include(GNUInstallDirs)
