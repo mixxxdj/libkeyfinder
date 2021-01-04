@@ -27,7 +27,7 @@
 
 namespace KeyFinder {
 
-  class TemporalWindowFactory {
+  class KEYFINDER_DECLSPEC TemporalWindowFactory {
   public:
     TemporalWindowFactory();
     ~TemporalWindowFactory();
@@ -38,7 +38,7 @@ namespace KeyFinder {
     std::mutex temporalWindowFactoryMutex;
   };
 
-  class TemporalWindowFactory::TemporalWindowWrapper {
+  class KEYFINDER_DECLSPEC TemporalWindowFactory::TemporalWindowWrapper {
   public:
     TemporalWindowWrapper(unsigned int frameSize);
     unsigned int getFrameSize() const;

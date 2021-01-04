@@ -27,7 +27,7 @@
 
 namespace KeyFinder {
 
-  class ChromaTransform {
+  class KEYFINDER_DECLSPEC ChromaTransform {
   public:
     ChromaTransform(unsigned int frameRate);
     std::vector<double> chromaVector(const FftAdapter* const fft) const;

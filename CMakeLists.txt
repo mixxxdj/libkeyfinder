@@ -26,6 +26,9 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 find_package(FFTW3 REQUIRED)
 target_link_libraries(keyfinder PUBLIC FFTW3::fftw3)
 target_include_directories(keyfinder PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
+if(MSVC AND BUILD_SHARED_LIBS)
+  target_compile_definitions(keyfinder PRIVATE KEYFINDER_DLLEXPORT)
+endif()
 
 #
 # Installation
