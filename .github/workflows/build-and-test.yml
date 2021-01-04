@@ -56,11 +56,11 @@ jobs:
     - name: Install
       run: cmake --install . ${{ matrix.cmake_config }}
       working-directory: build
-    - name: run tests
+    - name: Run Tests
       if: runner.os != 'Windows'
       run: ctest ${{ matrix.ctest_config }} --verbose
       working-directory: build
-    - name: upload build artifact
+    - name: Upload Build Artifact
       uses: actions/upload-artifact@v2
       with:
         name: ${{ matrix.name }} libKeyFinder build
