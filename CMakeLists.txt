@@ -3,14 +3,8 @@ project(libkeyfinder)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-option(BUILD_STATIC_LIBS "Build library statically" OFF)
-if(BUILD_STATIC_LIBS)
-  set(LIBMODE "STATIC")
-else()
-  set(LIBMODE "SHARED")
-endif()
-
-add_library(keyfinder "${LIBMODE}"
+option(BUILD_SHARED_LIBS "Build dynamic library" OFF)
+add_library(keyfinder
   src/audiodata.cpp
   src/chromagram.cpp
   src/chromatransform.cpp
