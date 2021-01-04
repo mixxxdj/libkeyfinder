@@ -39,10 +39,12 @@ jobs:
         sudo apt-get install -y --no-install-recommends fftw3-dev
     - name: "[macOS] Install FFTW"
       if: startsWith(matrix.os, 'macos')
-      run: brew install fftw
+      run: brew install fftw catch2
     - name: "[Windows] Install FFTW"
       if: startsWith(matrix.os, 'windows')
-      run: vcpkg install fftw3:x64-windows-static
+      run: vcpkg install fftw3 catch2
+      env:
+        VCPKG_DEFAULT_TRIPLET: x64-windows-static
     - name: Set up build directory
       run: mkdir build
     - name: Configure
@@ -58,8 +60,10 @@ jobs:
       working-directory: build
     - name: Run Tests
       if: runner.os != 'Windows'
-      run: ctest ${{ matrix.ctest_config }} --verbose
+      run: ctest ${{ matrix.ctest_config }} --output-on-failure
       working-directory: build
+      env:
+        CTEST_PARALLEL_LEVEL: 2
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v2
       with:

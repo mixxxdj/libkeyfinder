@@ -23,7 +23,7 @@
 #define TESTHELPERS_H
 
 #include <cmath>
-#include "catch/catch.hpp"
+#include <catch2/catch.hpp>
 #include "keyfinder.h"
 
 // all of this is a bit weak.
