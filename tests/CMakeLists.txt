@@ -1,4 +1,4 @@
-add_executable(test
+add_executable(keyfinder-tests
     main.cpp
     _testhelpers.cpp
     audiodatatest.cpp
@@ -18,5 +18,5 @@ add_executable(test
     toneprofilestest.cpp
     windowfunctiontest.cpp
     workspacetest.cpp)
-target_include_directories(test PRIVATE ../src)
-target_link_libraries(test keyfinder)
+target_include_directories(keyfinder-tests PRIVATE ../src)
+target_link_libraries(keyfinder-tests PRIVATE keyfinder)

@@ -60,3 +60,5 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/libKeyFinder.pc.cmake
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libKeyFinder.pc DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
 
 add_subdirectory(tests)
+enable_testing()
+add_test(NAME KeyFinder COMMAND $<TARGET_FILE:keyfinder-tests>)
