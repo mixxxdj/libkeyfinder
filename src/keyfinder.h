@@ -23,6 +23,7 @@
 #define KEYFINDER_H
 
 #include "audiodata.h"
+#include "constants.h"
 #include "lowpassfilterfactory.h"
 #include "chromatransformfactory.h"
 #include "spectrumanalyser.h"
@@ -30,7 +31,7 @@
 
 namespace KeyFinder {
 
-  class KeyFinder {
+  class KEYFINDER_DECLSPEC KeyFinder {
   public:
 
     // for progressive analysis

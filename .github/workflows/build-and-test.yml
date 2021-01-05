@@ -12,9 +12,20 @@ jobs:
           - name: Ubuntu 20.04
             os: ubuntu-20.04
             install_dir: ~/libKeyFinder
+            cmake_extras: -DCMAKE_BUILD_TYPE=RelWithDebInfo
           - name: macOS 10.15
             os: macos-10.15
             install_dir: ~/libKeyFinder
+            cmake_extras: -DCMAKE_BUILD_TYPE=RelWithDebInfo
+          - name: Windows 2019
+            os: windows-2019
+            install_dir: C:\libKeyFinder
+            cmake_extras: >-
+              -DVCPKG_TARGET_TRIPLET=x64-windows-static
+              -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake
+              -DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON
+            cmake_config: --config RelWithDebInfo
+            ctest_config: --build-config RelWithDebInfo
 
     name: ${{ matrix.name }}
     runs-on: ${{ matrix.os }}
@@ -29,14 +40,27 @@ jobs:
     - name: "[macOS] Install FFTW"
       if: startsWith(matrix.os, 'macos')
       run: brew install fftw
-    - name: build
-      run: |
-        cmake -DCMAKE_INSTALL_PREFIX=${{ matrix.install_dir }} -S . -B build
-        cmake --build build --parallel 2
-        cmake --install build
-    - name: run tests
-      run: build/tests/test
-    - name: upload build artifact
+    - name: "[Windows] Install FFTW"
+      if: startsWith(matrix.os, 'windows')
+      run: vcpkg install fftw3:x64-windows-static
+    - name: Set up build directory
+      run: mkdir build
+    - name: Configure
+      run: cmake -DCMAKE_INSTALL_PREFIX=${{ matrix.install_dir }} ${{ matrix.cmake_extras }} ..
+      working-directory: build
+    - name: Build
+      run: cmake --build . ${{ matrix.cmake_config }}
+      working-directory: build
+      env:
+        CMAKE_BUILD_PARALLEL_LEVEL: 2
+    - name: Install
+      run: cmake --install . ${{ matrix.cmake_config }}
+      working-directory: build
+    - name: Run Tests
+      if: runner.os != 'Windows'
+      run: ctest ${{ matrix.ctest_config }} --verbose
+      working-directory: build
+    - name: Upload Build Artifact
       uses: actions/upload-artifact@v2
       with:
         name: ${{ matrix.name }} libKeyFinder build

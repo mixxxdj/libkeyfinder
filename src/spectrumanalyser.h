@@ -32,7 +32,7 @@
 
 namespace KeyFinder {
 
-  class SpectrumAnalyser {
+  class KEYFINDER_DECLSPEC SpectrumAnalyser {
   public:
     SpectrumAnalyser(unsigned int frameRate, ChromaTransformFactory* ctFactory, TemporalWindowFactory* twFactory);
     Chromagram* chromagramOfWholeFrames(AudioData& audio, FftAdapter* const fft) const;

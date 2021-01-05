@@ -30,7 +30,7 @@ namespace KeyFinder {
 
   class LowPassFilterPrivate;
 
-  class LowPassFilter {
+  class KEYFINDER_DECLSPEC LowPassFilter {
   public:
     LowPassFilter(unsigned int order, unsigned int frameRate, double cornerFrequency, unsigned int fftFrameSize);
     ~LowPassFilter();

@@ -26,7 +26,7 @@
 
 namespace KeyFinder {
 
-  class WindowFunction {
+  class KEYFINDER_DECLSPEC WindowFunction {
   public:
     double window(temporal_window_t windowType, int sample, int width) const;
     double gaussianWindow(int sample, int width, double sigma) const;
