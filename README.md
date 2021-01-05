@@ -14,6 +14,7 @@ First, you will need to install [FFTW3](http://www.fftw.org/download.html):
 * Debian & Ubuntu: `$ sudo apt install libfftw3-dev`
 * Arch Linux: `$ sudo pacman -S fftw catch2`
 * macOS and homebrew: `$ brew install fftw catch2`
+* Windows: `> vcpkg install fftw3 catch2`
 
 [catch2](https://github.com/catchorg/Catch2) is required for building the tests. It is not available in Debian 10 or Ubuntu 20.04 LTS,
 although it is available in Ubuntu 20.10 and Debian 11 testing. If catch2 is not found, it will be automatically downloaded by CMake.
