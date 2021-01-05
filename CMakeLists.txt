@@ -62,9 +62,9 @@ install(FILES
   DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/keyfinder")
 
 set(LIBKEYFINDER_VERSION 2.2.3)
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/libKeyFinder.pc.cmake
-  ${CMAKE_CURRENT_BINARY_DIR}/libKeyFinder.pc @ONLY)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libKeyFinder.pc DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/libkeyfinder.pc.cmake
+  ${CMAKE_CURRENT_BINARY_DIR}/libkeyfinder.pc @ONLY)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libkeyfinder.pc DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
 
 #
 # Tests
