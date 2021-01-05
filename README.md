@@ -1,6 +1,6 @@
-# `libKeyFinder`
+# libKeyFinder
 
-`libKeyFinder` is a small C++11 library for estimating the musical key of digital audio. It is published under the [GNU General Public License version 3 or later](LICENSE).
+libKeyFinder is a small C++11 library for estimating the musical key of digital audio. It is published under the [GNU General Public License version 3 or later](LICENSE).
 
 It was written by [Ibrahim Shaath](http://ibrahimshaath.co.uk/keyfinder/) who wrote it in 2011 as part of a master's thesis in computer science. A [GUI application](https://github.com/ibsh/is_KeyFinder) to use it is available for [macOS](http://www.ibrahimshaath.co.uk/keyfinder/bins/KeyFinder-OSX-2-4.zip) and [Windows](http://www.ibrahimshaath.co.uk/keyfinder/bins/KeyFinder-WIN-1-25.zip), however that is no longer maintained and does not build on contemporary Linux distributions.
 
