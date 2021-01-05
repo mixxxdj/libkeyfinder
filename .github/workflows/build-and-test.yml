@@ -23,7 +23,6 @@ jobs:
             cmake_extras: >-
               -DVCPKG_TARGET_TRIPLET=x64-windows-static
               -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake
-              -DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON
             cmake_config: --config RelWithDebInfo
             ctest_config: --build-config RelWithDebInfo
 
