@@ -76,7 +76,17 @@ First, you will need to install [FFTW3](http://www.fftw.org/download.html):
 
 * Fedora: `$ sudo dnf install fftw-devel`
 * Debian & Ubuntu: `$ sudo apt install libfftw3-dev`
+* Arch Linux: `$ sudo pacman -S fftw`
 * macOS and homebrew: `$ brew install fftw`
+
+For the unit tests, [catch2](https://github.com/catchorg/Catch2/) is also required:
+
+* Fedora: `$ sudo dnf install catch2-devel`
+* Arch Linux: `$ sudo pacman -S catch2`
+* macOS and homebrew: `$ brew install catch2`
+
+If it's not already installed, catch2 will be automatically downloaded by CMake.
+Alternatively, it's possible disable building the unit tests by passing `-DBUILD_TESTING=OFF` to CMake.
 
 Once dependencies are installed, build `libKeyFinder`:
 
