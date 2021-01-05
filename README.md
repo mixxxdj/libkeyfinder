@@ -36,17 +36,11 @@ If you want to build libKeyFinder statically, add `-DBUILD_STATIC_LIBS=ON` to th
 
 ## Testing
 
-The tests are built together with the library. Simply run the test executable from the build directory:
+The tests are built together with the library. Simply run ctest from the build directory:
 
 ```sh
-$ build/tests/test
-```
-
-If all goes well, you should see something like this:
-
-```
-===============================================================================
-All tests passed (1705510 assertions in 65 test cases)
+$ cd build
+$ ctest --parallel number-of-cpu-cores
 ```
 
 Note that there is a known intermittent failure in the `FftAdapterTest/ForwardAndBackward` test. Try running the tests a handful of times to determine whether you are hitting the intermittent failure or have introduced a new bug.
