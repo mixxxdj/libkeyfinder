@@ -32,15 +32,15 @@ jobs:
     steps:
     - name: Check out Git repository
       uses: actions/checkout@v2
-    - name: "[Ubuntu] Install FFTW"
+    - name: "[Ubuntu] Install dependencies"
       if: startsWith(matrix.os, 'ubuntu')
       run: |
         sudo apt-get update
         sudo apt-get install -y --no-install-recommends fftw3-dev
-    - name: "[macOS] Install FFTW"
+    - name: "[macOS] Install dependencies"
       if: startsWith(matrix.os, 'macos')
       run: brew install fftw catch2
-    - name: "[Windows] Install FFTW"
+    - name: "[Windows] Install dependencies"
       if: startsWith(matrix.os, 'windows')
       run: vcpkg install fftw3 catch2
       env:
