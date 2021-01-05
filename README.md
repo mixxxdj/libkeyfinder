@@ -19,7 +19,7 @@ First, you will need to install [FFTW3](http://www.fftw.org/download.html):
 although it is available in Ubuntu 20.10 and Debian 11 testing. If catch2 is not found, it will be automatically downloaded by CMake.
 Alternatively, it's possible disable building the unit tests by passing `-DBUILD_TESTING=OFF` to CMake.
 
-Once dependencies are installed, build `libkeyfinder`:
+Once dependencies are installed, from the top level folder of this libkeyfinder repository:
 
 ```sh
 $ cmake -DCMAKE_INSTALL_PREFIX /where/you/want/to/install/to -S . -B build
