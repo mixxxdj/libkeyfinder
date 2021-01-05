@@ -16,7 +16,7 @@
  *
  * For the most basic use case, do something like this:
  *
- * ```C++
+ * ```
  * // Static because it retains useful resources for repeat use
  * static KeyFinder::KeyFinder k;
  *
@@ -44,7 +44,7 @@
  *
  * Alternatively, you can transform a stream of audio into a chromatic representation, and make progressive estimates of the key:
  *
- * ```C++
+ * ```
  * KeyFinder::AudioData a;
  * a.setFrameRate(yourAudioStream.framerate);
  * a.setChannels(yourAudioStream.channels);

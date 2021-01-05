@@ -27,7 +27,7 @@ $ cmake --build build --parallel number-of-cpu-cores
 $ cmake --install build
 ```
 
-If you want to build libKeyFinder statically, add `-DBUILD_STATIC_LIBS=ON` to the first call to `cmake` above.
+If you want to build libKeyFinder statically, add `-DBUILD_SHARED_LIBS=OFF` to the first call to `cmake` above.
 
 ## Testing
 
