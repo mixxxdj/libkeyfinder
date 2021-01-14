@@ -34,10 +34,10 @@
  * }
  *
  * // Run the analysis
- * KeyFinder::KeyDetectionResult r =  k.keyOfAudio(a);
+ * KeyFinder::key_t key = k.keyOfAudio(a);
  *
  * // And do something with the result
- * doSomethingWith(r.globalKeyEstimate);
+ * doSomethingWith(key);
  * ```
  *
  * \section example_progressive Progressive Estimation Example
@@ -63,8 +63,8 @@
  *   k.progressiveChromagram(a, w);
  *
  *   // if you want to grab progressive key estimates...
- *   KeyFinder::KeyDetectionResult r = k.keyOfChromagram(w);
- *   doSomethingWithMostRecentKeyEstimate(r.globalKeyEstimate);
+ *   KeyFinder::key_t key = k.keyOfChromagram(w);
+ *   doSomethingWithMostRecentKeyEstimate(key);
  * }
  *
  * // if you only want a single key estimate, or to squeeze
@@ -73,8 +73,8 @@
  * k.finalChromagram(w);
  *
  * // and finally...
- * KeyFinder::KeyDetectionResult r = k.keyOfChromagram(w);
+ * KeyFinder::key key = k.keyOfChromagram(w);
  *
- * doSomethingWithFinalKeyEstimate(r.globalKeyEstimate);
+ * doSomethingWithFinalKeyEstimate(key);
  * ```
  */
