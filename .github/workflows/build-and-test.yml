@@ -63,6 +63,15 @@ jobs:
       working-directory: build
       env:
         CTEST_PARALLEL_LEVEL: 2
+    - name: Build example application
+      run: |
+        mkdir build
+        cd build
+        cmake ${{ matrix.cmake_extras }} ..
+        cmake --build .
+      working-directory: examples
+      env:
+        CMAKE_PREFIX_PATH: ${{ matrix.install_dir }}
     - name: Upload Build Artifact
       uses: actions/upload-artifact@v2
       with:
