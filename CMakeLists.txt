@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(libkeyfinder)
+project(KeyFinder VERSION 2.2.3)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
@@ -61,7 +61,6 @@ install(FILES
   src/binode.h
   DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/keyfinder")
 
-set(LIBKEYFINDER_VERSION 2.2.3)
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/libkeyfinder.pc.cmake
   ${CMAKE_CURRENT_BINARY_DIR}/libkeyfinder.pc @ONLY)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libkeyfinder.pc DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
