@@ -26,7 +26,10 @@ add_library(keyfinder
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 find_package(FFTW3 REQUIRED)
 target_link_libraries(keyfinder PUBLIC FFTW3::fftw3)
-target_include_directories(keyfinder PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(keyfinder PUBLIC
+   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+   $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+)
 if(MSVC AND BUILD_SHARED_LIBS)
   target_compile_definitions(keyfinder PRIVATE KEYFINDER_DLLEXPORT)
 endif()
@@ -35,12 +38,18 @@ endif()
 # Installation
 #
 include(GNUInstallDirs)
+include(CMakePackageConfigHelpers)
+
+# Library
 install(TARGETS keyfinder
+  EXPORT KeyFinderTargets
   ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
   LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
   RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
+  INCLUDES DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}"
 )
 
+# Headers
 install(FILES
   src/audiodata.h
   src/chromagram.h
@@ -61,9 +70,34 @@ install(FILES
   src/binode.h
   DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/keyfinder")
 
+# pkgconfig
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/libkeyfinder.pc.cmake
   ${CMAKE_CURRENT_BINARY_DIR}/libkeyfinder.pc @ONLY)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libkeyfinder.pc DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
+
+# CMake config
+set(KEYFINDER_INSTALL_CMAKEDIR "lib/cmake/KeyFinder")
+install(
+  EXPORT KeyFinderTargets
+  FILE KeyFinderTargets.cmake
+  NAMESPACE KeyFinder::
+  DESTINATION "${KEYFINDER_INSTALL_CMAKEDIR}"
+)
+configure_package_config_file(KeyFinderConfig.cmake.in
+  "${CMAKE_CURRENT_BINARY_DIR}/KeyFinderConfig.cmake"
+  INSTALL_DESTINATION "${KEYFINDER_INSTALL_CMAKEDIR}"
+)
+write_basic_package_version_file(
+  "${CMAKE_CURRENT_BINARY_DIR}/KeyFinderConfigVersion.cmake"
+  VERSION "${CMAKE_PROJECT_VERSION}"
+  COMPATIBILITY SameMajorVersion
+)
+install(
+  FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/KeyFinderConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KeyFinderConfigVersion.cmake"
+  DESTINATION "${KEYFINDER_INSTALL_CMAKEDIR}"
+)
 
 #
 # Tests

@@ -1,0 +1,8 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+find_dependency(FFTW3)
+
+include("${CMAKE_CURRENT_LIST_DIR}/KeyFinderTargets.cmake")
+
+check_required_components(KeyFinder)
