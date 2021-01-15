@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.4)
 project(KeyFinder VERSION 2.2.4)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -30,6 +30,10 @@ target_link_libraries(keyfinder PUBLIC FFTW3::fftw3)
 target_include_directories(keyfinder PUBLIC
    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+)
+
+set_target_properties(keyfinder PROPERTIES
+  WINDOWS_EXPORT_ALL_SYMBOLS TRUE
 )
 
 #
