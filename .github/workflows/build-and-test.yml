@@ -39,6 +39,15 @@ jobs:
     - name: "[macOS] Install dependencies"
       if: startsWith(matrix.os, 'macos')
       run: brew install fftw catch2
+    - name: "[Windows] Set up vcpkg cache"
+      uses: actions/cache@v2
+      if: runner.os == 'Windows'
+      with:
+        path: C:\Users\runneradmin\AppData\Local\vcpkg\archives
+        key: vcpkg-${{ github.head_ref }}-${{ github.run_number }}
+        restore-keys: |
+          vcpkg-${{ github.head_ref }}
+          vcpkg
     - name: "[Windows] Install dependencies"
       if: startsWith(matrix.os, 'windows')
       run: vcpkg install fftw3 catch2
