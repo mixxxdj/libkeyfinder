@@ -26,7 +26,7 @@
 
 namespace KeyFinder {
 
-  class KEYFINDER_DECLSPEC Chromagram {
+  class Chromagram {
   public:
     Chromagram(unsigned int hops = 0);
     void append(const Chromagram& that);

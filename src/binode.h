@@ -22,12 +22,10 @@
 #ifndef BINODE_H
 #define BINODE_H
 
-#include "constants.h"
-
 namespace KeyFinder {
 
   template <class T>
-  class KEYFINDER_DECLSPEC Binode {
+  class Binode {
   public:
     Binode(T x = 0): l(0), r(0), data(x) {}
     Binode* l, *r;

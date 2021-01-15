@@ -29,7 +29,7 @@ namespace KeyFinder {
   class FftAdapterPrivate;
   class InverseFftAdapterPrivate;
 
-  class KEYFINDER_DECLSPEC FftAdapter {
+  class FftAdapter {
   public:
     FftAdapter(unsigned int frameSize);
     ~FftAdapter();
@@ -44,7 +44,7 @@ namespace KeyFinder {
     FftAdapterPrivate* priv;
   };
 
-  class KEYFINDER_DECLSPEC InverseFftAdapter {
+  class InverseFftAdapter {
   public:
     InverseFftAdapter(unsigned int frameSize);
     ~InverseFftAdapter();

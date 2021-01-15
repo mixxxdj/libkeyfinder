@@ -22,12 +22,6 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-#ifdef KEYFINDER_DLLEXPORT
-#define KEYFINDER_DECLSPEC __declspec(dllexport)
-#else
-#define KEYFINDER_DECLSPEC
-#endif
-
 #include <cmath>
 #include <vector>
 #include <deque>
@@ -101,11 +95,11 @@ namespace KeyFinder {
     SCALE_MINOR
   };
 
-  KEYFINDER_DECLSPEC double getFrequencyOfBand(unsigned int band);
-  KEYFINDER_DECLSPEC double getLastFrequency();
+  double getFrequencyOfBand(unsigned int band);
+  double getLastFrequency();
 
-  KEYFINDER_DECLSPEC const std::vector<double>& toneProfileMajor();
-  KEYFINDER_DECLSPEC const std::vector<double>& toneProfileMinor();
+  const std::vector<double>& toneProfileMajor();
+  const std::vector<double>& toneProfileMinor();
 }
 
 #endif
