@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>libKeyFinder: KeyFinder::LowPassFilterFactory Class Reference</title>
+<title>libKeyFinder: KeyFinder::LowPassFilterFactory::LowPassFilterWrapper Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -60,29 +60,38 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>KeyFinder</b></li><li class="navelem"><a class="el" href="classKeyFinder_1_1LowPassFilterFactory.html">LowPassFilterFactory</a></li>  </ul>
+<li class="navelem"><b>KeyFinder</b></li><li class="navelem"><a class="el" href="classKeyFinder_1_1LowPassFilterFactory.html">LowPassFilterFactory</a></li><li class="navelem"><a class="el" href="classKeyFinder_1_1LowPassFilterFactory_1_1LowPassFilterWrapper.html">LowPassFilterWrapper</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classKeyFinder_1_1LowPassFilterFactory-members.html">List of all members</a>  </div>
+<a href="classKeyFinder_1_1LowPassFilterFactory_1_1LowPassFilterWrapper-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">KeyFinder::LowPassFilterFactory Class Reference</div>  </div>
+<div class="title">KeyFinder::LowPassFilterFactory::LowPassFilterWrapper Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKeyFinder_1_1LowPassFilterFactory_1_1LowPassFilterWrapper.html">LowPassFilterWrapper</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae3dbb59dd67a6f84aae0773dc3a8b51e"><td class="memItemLeft" align="right" valign="top"><a id="ae3dbb59dd67a6f84aae0773dc3a8b51e"></a>
-const <a class="el" href="classKeyFinder_1_1LowPassFilter.html">LowPassFilter</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getLowPassFilter</b> (unsigned int order, unsigned int frameRate, double cornerFrequency, unsigned int fftFrameSize)</td></tr>
-<tr class="separator:ae3dbb59dd67a6f84aae0773dc3a8b51e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a701fa70adc3de1bb6bad2de53eddfa1e"><td class="memItemLeft" align="right" valign="top"><a id="a701fa70adc3de1bb6bad2de53eddfa1e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>LowPassFilterWrapper</b> (unsigned int order, unsigned int frameRate, double cornerFrequency, unsigned int fftFrameSize, const <a class="el" href="classKeyFinder_1_1LowPassFilter.html">LowPassFilter</a> *const filter)</td></tr>
+<tr class="separator:a701fa70adc3de1bb6bad2de53eddfa1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9967b9b545277ebc8f028e8273eb4106"><td class="memItemLeft" align="right" valign="top"><a id="a9967b9b545277ebc8f028e8273eb4106"></a>
+const <a class="el" href="classKeyFinder_1_1LowPassFilter.html">LowPassFilter</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getLowPassFilter</b> () const</td></tr>
+<tr class="separator:a9967b9b545277ebc8f028e8273eb4106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bb684b7a26464972398d2fad313d9f2"><td class="memItemLeft" align="right" valign="top"><a id="a1bb684b7a26464972398d2fad313d9f2"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getOrder</b> () const</td></tr>
+<tr class="separator:a1bb684b7a26464972398d2fad313d9f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a067e2b058c4fb60f3609ab47865dc76c"><td class="memItemLeft" align="right" valign="top"><a id="a067e2b058c4fb60f3609ab47865dc76c"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getFrameRate</b> () const</td></tr>
+<tr class="separator:a067e2b058c4fb60f3609ab47865dc76c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab344960bafb8bcff76c6842c075d7f02"><td class="memItemLeft" align="right" valign="top"><a id="ab344960bafb8bcff76c6842c075d7f02"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>getCornerFrequency</b> () const</td></tr>
+<tr class="separator:ab344960bafb8bcff76c6842c075d7f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c3f56963b5a090264fb182f8437ca81"><td class="memItemLeft" align="right" valign="top"><a id="a3c3f56963b5a090264fb182f8437ca81"></a>
+unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>getFftFrameSize</b> () const</td></tr>
+<tr class="separator:a3c3f56963b5a090264fb182f8437ca81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="lowpassfilterfactory_8h_source.html">lowpassfilterfactory.h</a></li>
