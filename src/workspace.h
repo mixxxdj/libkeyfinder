@@ -25,12 +25,11 @@
 #include "audiodata.h"
 #include "binode.h"
 #include "chromagram.h"
-#include "constants.h"
 #include "fftadapter.h"
 
 namespace KeyFinder {
 
-  class KEYFINDER_DECLSPEC Workspace {
+  class Workspace {
   public:
     Workspace();
     ~Workspace();

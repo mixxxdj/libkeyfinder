@@ -27,7 +27,7 @@
 
 namespace KeyFinder {
 
-  class KEYFINDER_DECLSPEC LowPassFilterFactory {
+  class LowPassFilterFactory {
   public:
     LowPassFilterFactory();
     ~LowPassFilterFactory();
@@ -38,7 +38,7 @@ namespace KeyFinder {
     std::mutex lowPassFilterFactoryMutex;
   };
 
-  class KEYFINDER_DECLSPEC LowPassFilterFactory::LowPassFilterWrapper {
+  class LowPassFilterFactory::LowPassFilterWrapper {
   public:
     LowPassFilterWrapper(unsigned int order, unsigned int frameRate, double cornerFrequency, unsigned int fftFrameSize, const LowPassFilter* const filter);
     ~LowPassFilterWrapper();

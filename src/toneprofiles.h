@@ -27,7 +27,7 @@
 
 namespace KeyFinder {
 
-  class KEYFINDER_DECLSPEC ToneProfile {
+  class ToneProfile {
   public:
     ToneProfile(const std::vector<double>& customProfile);
     ~ToneProfile();

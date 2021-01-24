@@ -27,7 +27,7 @@
 
 namespace KeyFinder {
 
-  class KEYFINDER_DECLSPEC KeyClassifier {
+  class KeyClassifier {
   public:
     KeyClassifier(const std::vector<double>& majorProfile, const std::vector<double>& minorProfile);
     ~KeyClassifier();

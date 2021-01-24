@@ -26,7 +26,7 @@
 
 namespace KeyFinder {
 
-  class KEYFINDER_DECLSPEC AudioData {
+  class AudioData {
   public:
     AudioData();
 

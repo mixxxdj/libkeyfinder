@@ -25,11 +25,9 @@
 #include <stdexcept>
 #include <sstream>
 
-#include "constants.h"
-
 namespace KeyFinder {
 
-  class KEYFINDER_DECLSPEC Exception : public std::runtime_error {
+  class Exception : public std::runtime_error {
   public:
     Exception(const char* msg) : std::runtime_error(msg) { }
   };

@@ -22,12 +22,12 @@
 #ifndef CHROMATRANSFORMFACTORY_H
 #define CHROMATRANSFORMFACTORY_H
 
-#include "chromatransform.h"
 #include "constants.h"
+#include "chromatransform.h"
 
 namespace KeyFinder {
 
-  class KEYFINDER_DECLSPEC ChromaTransformFactory {
+  class ChromaTransformFactory {
   public:
     ChromaTransformFactory();
     ~ChromaTransformFactory();
@@ -38,7 +38,7 @@ namespace KeyFinder {
     std::mutex chromaTransformFactoryMutex;
   };
 
-  class KEYFINDER_DECLSPEC ChromaTransformFactory::ChromaTransformWrapper {
+  class ChromaTransformFactory::ChromaTransformWrapper {
   public:
     ChromaTransformWrapper(unsigned int frameRate, const ChromaTransform* const transform);
     ~ChromaTransformWrapper();
