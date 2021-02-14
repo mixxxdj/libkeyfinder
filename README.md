@@ -13,10 +13,9 @@ First, you will need to install [FFTW3](http://www.fftw.org/download.html):
 * Fedora: `$ sudo dnf install fftw-devel catch2-devel`
 * Debian & Ubuntu: `$ sudo apt install libfftw3-dev`
 * Arch Linux: `$ sudo pacman -S fftw catch2`
-* macOS and homebrew: `$ brew install fftw catch2`
 * Windows: `> vcpkg install fftw3 catch2`
 
-[catch2](https://github.com/catchorg/Catch2) is required for building the tests. It is not available in Debian 10 or Ubuntu 20.04 LTS,
+[Catch2](https://github.com/catchorg/Catch2) is required for building the tests. It is not available in Debian 10 or Ubuntu 20.04 LTS,
 although it is available in Ubuntu 20.10 and Debian 11 testing. If catch2 is not found, it will be automatically downloaded by CMake.
 Alternatively, it's possible disable building the unit tests by passing `-DBUILD_TESTING=OFF` to CMake.
 
@@ -29,6 +28,17 @@ $ cmake --install build
 ```
 
 If you want to build libkeyfinder statically, add `-DBUILD_SHARED_LIBS=OFF` to the first call to `cmake` above.
+
+### MacOS Installation
+
+Install the CMake, FFTW3, and Catch2 dependencies.
+If you have [Homebrew](https://brew.sh/) installed, this can be done simply by running `brew install cmake fftw catch2`.
+
+```
+cmake -DCMAKE_INSTALL_PREFIX=/usr/local -S . -B build
+cmake --build build --parallel $(sysctl -n hw.logicalcpu)
+cmake --install build
+```
 
 ## Testing
 
