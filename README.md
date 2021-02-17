@@ -10,9 +10,10 @@ In 2020, Ibrahim handed over maintenance of libkeyfinder to the [Mixxx DJ softwa
 
 First, you will need to install [FFTW3](http://www.fftw.org/download.html):
 
-* Fedora: `$ sudo dnf install fftw-devel catch2-devel`
-* Debian & Ubuntu: `$ sudo apt install libfftw3-dev`
-* Arch Linux: `$ sudo pacman -S fftw catch2`
+* Fedora: `$ sudo dnf install cmake fftw-devel catch2-devel`
+* Debian & Ubuntu: `$ sudo apt install cmake libfftw3-dev`
+* Arch Linux: `$ sudo pacman -S cmake fftw catch2`
+* MacOS (via [Homebrew](https://brew.sh/)): `$ brew install cmake fftw catch2`
 * Windows: `> vcpkg install fftw3 catch2`
 
 [Catch2](https://github.com/catchorg/Catch2) is required for building the tests. It is not available in Debian 10 or Ubuntu 20.04 LTS,
@@ -29,16 +30,7 @@ $ cmake --install build
 
 If you want to build libkeyfinder statically, add `-DBUILD_SHARED_LIBS=OFF` to the first call to `cmake` above.
 
-### MacOS Installation
-
-Install the CMake, FFTW3, and Catch2 dependencies.
-If you have [Homebrew](https://brew.sh/) installed, this can be done simply by running `brew install cmake fftw catch2`.
-
-```
-cmake -DCMAKE_INSTALL_PREFIX=/usr/local -S . -B build
-cmake --build build --parallel $(sysctl -n hw.logicalcpu)
-cmake --install build
-```
+On MacOS, a typical location to install to is `/usr/local` and you can check the number of CPU cores by running `$ sysctl -n hw.logicalcpu`.
 
 ## Testing
 
