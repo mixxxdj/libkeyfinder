@@ -23,7 +23,7 @@ Alternatively, it's possible disable building the unit tests by passing `-DBUILD
 Once dependencies are installed, from the top level folder of this libkeyfinder repository:
 
 ```sh
-$ cmake -DCMAKE_INSTALL_PREFIX /where/you/want/to/install/to -S . -B build
+$ cmake -DCMAKE_INSTALL_PREFIX=/where/you/want/to/install/to -S . -B build
 $ cmake --build build --parallel number-of-cpu-cores
 $ cmake --install build
 ```
