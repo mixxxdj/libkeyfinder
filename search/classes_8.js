@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['spectrumanalyser',['SpectrumAnalyser',['../classKeyFinder_1_1SpectrumAnalyser.html',1,'KeyFinder']]]
+  ['spectrumanalyser_35',['SpectrumAnalyser',['../classKeyFinder_1_1SpectrumAnalyser.html',1,'KeyFinder']]]
 ];

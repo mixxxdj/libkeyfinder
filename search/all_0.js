@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['audiodata',['AudioData',['../classKeyFinder_1_1AudioData.html',1,'KeyFinder']]]
+  ['audiodata_0',['AudioData',['../classKeyFinder_1_1AudioData.html',1,'KeyFinder']]]
 ];
