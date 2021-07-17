@@ -77,9 +77,9 @@ install(FILES
   DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/keyfinder")
 
 # pkgconfig
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/libkeyfinder.pc.in
-  ${CMAKE_CURRENT_BINARY_DIR}/libkeyfinder.pc @ONLY)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libkeyfinder.pc DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/packaging/libkeyfinder.pc.in
+  ${CMAKE_CURRENT_BINARY_DIR}/packaging/libkeyfinder.pc @ONLY)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/packaging/libkeyfinder.pc DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
 
 # CMake config
 set(KEYFINDER_INSTALL_CMAKEDIR "lib/cmake/KeyFinder")
@@ -89,19 +89,19 @@ install(
   NAMESPACE KeyFinder::
   DESTINATION "${KEYFINDER_INSTALL_CMAKEDIR}"
 )
-configure_package_config_file(KeyFinderConfig.cmake.in
-  "${CMAKE_CURRENT_BINARY_DIR}/KeyFinderConfig.cmake"
+configure_package_config_file(packaging/KeyFinderConfig.cmake.in
+  "${CMAKE_CURRENT_BINARY_DIR}/packaging/KeyFinderConfig.cmake"
   INSTALL_DESTINATION "${KEYFINDER_INSTALL_CMAKEDIR}"
 )
 write_basic_package_version_file(
-  "${CMAKE_CURRENT_BINARY_DIR}/KeyFinderConfigVersion.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/packaging/KeyFinderConfigVersion.cmake"
   VERSION "${CMAKE_PROJECT_VERSION}"
   COMPATIBILITY SameMajorVersion
 )
 install(
   FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KeyFinderConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KeyFinderConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/packaging/KeyFinderConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/packaging/KeyFinderConfigVersion.cmake"
   DESTINATION "${KEYFINDER_INSTALL_CMAKEDIR}"
 )
 
