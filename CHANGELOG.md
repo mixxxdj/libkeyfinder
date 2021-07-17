@@ -1,5 +1,8 @@
 # Change log
 
+## 2.2.5
+  * Set version for .so library and setup version symlinks
+
 ## 2.2.4
 
   * Rename repository from libKeyFinder to libkeyfinder
