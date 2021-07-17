@@ -23,6 +23,10 @@ add_library(keyfinder
   src/constants.cpp
 )
 
+set_target_properties(keyfinder PROPERTIES
+	SOVERSION ${PROJECT_VERSION_MAJOR}
+	VERSION ${PROJECT_VERSION})
+
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 find_package(FFTW3 REQUIRED)
 target_link_libraries(keyfinder PUBLIC FFTW3::fftw3)
