@@ -7,4 +7,5 @@ Description: libKeyFinder can be used to estimate the musical key of digital aud
 Version: @CMAKE_PROJECT_VERSION@
 URL: https://github.com/mixxxdj/libKeyFinder
 Libs: -L${libdir} -lkeyfinder
+Requires.private: fftw3
 Cflags: -I${includedir}
