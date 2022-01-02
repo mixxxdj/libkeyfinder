@@ -1,5 +1,10 @@
 # Change log
 
+## 2.2.6
+  * Install CMake package config to CMAKE_INSTALL_LIBDIR
+  * Install FindFFTW3.cmake module
+  * Fix fftw3 missing from Requires.private in pkgconfig file
+
 ## 2.2.5
   * Set version for .so library and setup version symlinks
 
