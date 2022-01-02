@@ -104,6 +104,7 @@ install(
     "${CMAKE_CURRENT_BINARY_DIR}/packaging/KeyFinderConfigVersion.cmake"
   DESTINATION "${KEYFINDER_INSTALL_CMAKEDIR}"
 )
+install(FILES cmake/FindFFTW3.cmake DESTINATION "${KEYFINDER_INSTALL_CMAKEDIR}/modules")
 
 #
 # Tests
