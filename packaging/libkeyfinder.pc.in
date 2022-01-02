@@ -2,10 +2,10 @@ prefix=@CMAKE_INSTALL_PREFIX@
 includedir=${prefix}/include
 libdir=${prefix}/@CMAKE_INSTALL_LIBDIR@
 
-Name: libKeyFinder
-Description: libKeyFinder can be used to estimate the musical key of digital audio
+Name: libkeyfinder
+Description: libkeyfinder can be used to estimate the musical key of digital audio
 Version: @CMAKE_PROJECT_VERSION@
-URL: https://github.com/mixxxdj/libKeyFinder
+URL: https://github.com/mixxxdj/libkeyfinder
 Libs: -L${libdir} -lkeyfinder
 Requires.private: fftw3
 Cflags: -I${includedir}
