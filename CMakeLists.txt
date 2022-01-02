@@ -82,7 +82,7 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/packaging/libkeyfinder.pc.in
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/packaging/libkeyfinder.pc DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
 
 # CMake config
-set(KEYFINDER_INSTALL_CMAKEDIR "lib/cmake/KeyFinder")
+set(KEYFINDER_INSTALL_CMAKEDIR "${CMAKE_INSTALL_LIBDIR}/cmake/KeyFinder")
 install(
   EXPORT KeyFinderTargets
   FILE KeyFinderTargets.cmake
