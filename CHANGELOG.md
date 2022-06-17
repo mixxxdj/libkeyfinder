@@ -1,5 +1,8 @@
 # Change log
 
+## 2.2.7
+  * Fix pkgconfig file when CMAKE_INSTALL_{INCLUDE,LIB}DIR are absolute paths
+
 ## 2.2.6
   * Install CMake package config to CMAKE_INSTALL_LIBDIR
   * Install FindFFTW3.cmake module
