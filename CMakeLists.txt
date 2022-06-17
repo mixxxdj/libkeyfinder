@@ -77,6 +77,16 @@ install(FILES
   DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/keyfinder")
 
 # pkgconfig
+if(IS_ABSOLUTE "${CMAKE_INSTALL_LIBDIR}")
+  set(PKGCONFIG_LIBDIR "${CMAKE_INSTALL_LIBDIR}")
+else()
+  set(PKGCONFIG_LIBDIR "\${prefix}/${CMAKE_INSTALL_LIBDIR}")
+endif()
+if(IS_ABSOLUTE "${CMAKE_INSTALL_INCLUDEDIR}")
+  set(PKGCONFIG_INCLUDEDIR "${CMAKE_INSTALL_INCLUDEDIR}")
+else()
+  set(PKGCONFIG_INCLUDEDIR "\${prefix}/${CMAKE_INSTALL_INCLUDEDIR}")
+endif()
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/packaging/libkeyfinder.pc.in
   ${CMAKE_CURRENT_BINARY_DIR}/packaging/libkeyfinder.pc @ONLY)
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/packaging/libkeyfinder.pc DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
