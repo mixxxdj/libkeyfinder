@@ -1,5 +1,9 @@
 # Change log
 
+## 2.2.8
+  * Update tests to Catch3
+  * Bump minimum CMake version to 3.5 to avoid deprecation warning
+
 ## 2.2.7
   * Fix pkgconfig file when CMAKE_INSTALL_{INCLUDE,LIB}DIR are absolute paths
 

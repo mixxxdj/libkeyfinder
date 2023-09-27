@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(KeyFinder VERSION 2.2.7)
+project(KeyFinder VERSION 2.2.8)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
