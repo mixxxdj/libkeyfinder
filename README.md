@@ -1,5 +1,7 @@
 # libkeyfinder
 
+[![build](https://github.com/mixxxdj/libkeyfinder/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/mixxxdj/libkeyfinder/actions/workflows/build-and-test.yml)
+
 libkeyfinder is a small C++11 library for estimating the musical key of digital audio. It is published under the [GNU General Public License version 3 or later](LICENSE).
 
 The library was written by [Ibrahim Shaath](http://ibrahimshaath.co.uk/keyfinder/) in 2011 as part of a master's project in computer science, ["Estimations of key in digital music recordings"](https://www.ibrahimshaath.co.uk/keyfinder/KeyFinder.pdf).
