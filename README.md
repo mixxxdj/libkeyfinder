@@ -1,8 +1,12 @@
 # libkeyfinder
 
+[![build](https://github.com/mixxxdj/libkeyfinder/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/mixxxdj/libkeyfinder/actions/workflows/build-and-test.yml)
+
 libkeyfinder is a small C++11 library for estimating the musical key of digital audio. It is published under the [GNU General Public License version 3 or later](LICENSE).
 
-It was written by [Ibrahim Shaath](http://ibrahimshaath.co.uk/keyfinder/) who wrote it in 2011 as part of a master's thesis in computer science. A [GUI application](https://github.com/ibsh/is_KeyFinder) to use it is available for [macOS](http://www.ibrahimshaath.co.uk/keyfinder/bins/KeyFinder-OSX-2-4.zip) and [Windows](http://www.ibrahimshaath.co.uk/keyfinder/bins/KeyFinder-WIN-1-25.zip), however that is no longer maintained and does not build on contemporary Linux distributions.
+The library was written by [Ibrahim Shaath](http://ibrahimshaath.co.uk/keyfinder/) in 2011 as part of a master's project in computer science, ["Estimations of key in digital music recordings"](https://www.ibrahimshaath.co.uk/keyfinder/KeyFinder.pdf), and originally hosted [in this repo](https://github.com/ibsh/libKeyFinder).
+
+A [GUI application](https://github.com/ibsh/is_KeyFinder) to use it is available for [macOS](http://www.ibrahimshaath.co.uk/keyfinder/bins/KeyFinder-OSX-2-4.zip) and [Windows](http://www.ibrahimshaath.co.uk/keyfinder/bins/KeyFinder-WIN-1-25.zip). This app is no longer maintained, however, and does not build on contemporary Linux distributions.
 
 In 2020, Ibrahim handed over maintenance of libkeyfinder to the [Mixxx DJ software](https://mixxx.org) team who incorporated it into Mixxx as of Mixxx 2.3. If you want to discuss anything related to libkeyfinder with us, please get in touch on the [Mixxx Zulip chat](https://mixxx.zulipchat.com/#narrow/stream/109171-development/topic/KeyFinder). Contributions are welcome by opening pull requests and issues on [GitHub](https://github.com/mixxxdj/libkeyfinder).
 
