@@ -21,6 +21,7 @@ jobs:
             os: windows-2019
             install_dir: C:\libKeyFinder
             cmake_extras: >-
+              -DBUILD_TESTING=OFF
               -DVCPKG_TARGET_TRIPLET=x64-windows-static
               -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake
             cmake_config: --config RelWithDebInfo
