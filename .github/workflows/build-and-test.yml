@@ -13,8 +13,8 @@ jobs:
             os: ubuntu-20.04
             install_dir: ~/libKeyFinder
             cmake_extras: -DCMAKE_BUILD_TYPE=RelWithDebInfo
-          - name: macOS 10.15
-            os: macos-10.15
+          - name: macOS 11
+            os: macos-11
             install_dir: ~/libKeyFinder
             cmake_extras: -DCMAKE_BUILD_TYPE=RelWithDebInfo
           - name: Windows 2019
