@@ -9,8 +9,8 @@ jobs:
     strategy:
       matrix:
         include:
-          - name: Ubuntu 20.04
-            os: ubuntu-20.04
+          - name: Ubuntu 22.04
+            os: ubuntu-22.04
             install_dir: ~/libKeyFinder
             cmake_extras: -DCMAKE_BUILD_TYPE=RelWithDebInfo
           - name: macOS 11
