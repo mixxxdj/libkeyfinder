@@ -42,7 +42,7 @@ find_path(FFTW3_INCLUDE_DIR
 mark_as_advanced(FFTW3_INCLUDE_DIR)
 
 find_library(FFTW3_LIBRARY
-  NAMES fftw fftw3 fftw-3.3
+  NAMES fftw3 fftw-3.3
   DOC "FFTW3 library"
 )
 mark_as_advanced(FFTW3_LIBRARY)
